@@ -53,7 +53,8 @@ jobs:
         run: |
           pushd site
           cp -rvf ${{ github.workspace }}/out/* .
-          cp -rvf ${{ github.workspace }}/.github/* .
+          mkdir -p .github/workflows
+          cp -rvf ${{ github.workspace }}/.github/workflows/* ./.github/workflows
           popd
           ls -la site/ 
       - name: Publish
